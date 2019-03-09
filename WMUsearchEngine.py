@@ -3,9 +3,10 @@ import sys
 
 
 def read_input_file(input_file):
-    num_lines = sum(1 for line in open(input_file))
+    num_lines = sum(1 for line in open(input_file, errors='ignore'))
+    print(num_lines)
     first_hashmap = HashMap(num_lines)
-    with open('inputs/urls.txt') as f:
+    with open(input_file, errors='ignore') as f:
         for row in f:
             have_both_items = False
             line = row.split(' ')
@@ -16,6 +17,7 @@ def read_input_file(input_file):
                 have_both_items = True
             if have_both_items:
                 link_url_to_keyword(url, keywords, first_hashmap)
+    print('Index Created\n')
     return first_hashmap
 
 
@@ -29,7 +31,7 @@ def link_url_to_keyword(url, keywords, hashmap):
 def search():
     # TODO allow user to look for urls with keywords
     print('searching')
-    first_hashmap.find_urls_with_keywords('red', 'fast', '||')
+    hashmap.find_urls_with_keywords('older', 'people', '&&')
     return
 
 
@@ -38,5 +40,5 @@ def delete():
     return
 
 
-first_hashmap = read_input_file('inputs/urls.txt')
+hashmap = read_input_file('inputs/url.txt')
 search()

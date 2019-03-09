@@ -34,7 +34,6 @@ class HashMap:
         self.hash_map[index_place].append(value)
 
     def hash_value(self, value):
-        # TODO hash the value
         index = len(value) * 6 % self.map_size
         return index
 
@@ -58,19 +57,37 @@ class HashMap:
                 print('or')
                 index_place = self.hash_value(operand_one)
                 for x in self.hash_map[index_place]:
-                    if x[0] == operand_one:
+                    if x[0].lower() == operand_one.lower():
                         for url in x:
                             if url.startswith('http'):
                                 urls.append(url)
                 index_place = self.hash_value(operand_two)
                 for x in self.hash_map[index_place]:
-                    if x[0] == operand_one:
+                    if x[0].lower() == operand_one.lower():
                         for url in x:
-                            if url.startswith('http'):
-                                if url not in urls:
+                            if url.startswith('http') and url not in urls:
                                     urls.append(url)
-                print(urls)
+                for url in urls:
+                    print(url)
+                print(len(urls))
                 return
             if operator == '&&':
-                print('and')
+                first_keyword = []
+                index_place = self.hash_value(operand_one)
+                for x in self.hash_map[index_place]:
+                    if x[0].lower() == operand_one.lower():
+                        for url in x:
+                            if url.startswith('http') and url not in first_keyword:
+                                first_keyword.append(url)
+                index_place = self.hash_value(operand_two)
+                for x in self.hash_map[index_place]:
+                    if x[0].lower() == operand_two.lower():
+                        for url in x:
+                            if url.startswith('http') and url in first_keyword and url not in urls:
+                                urls.append(url)
+                for url in urls:
+                    print(url)
+                print(len(urls))
                 return
+        else:
+            print('You don\'t have enough keywords')
