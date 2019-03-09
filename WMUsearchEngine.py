@@ -28,10 +28,10 @@ def link_url_to_keyword(url, keywords, hashmap):
     # print(hashmap)
 
 
-def search():
+def search(operand_one, operand_two, operator):
     # TODO allow user to look for urls with keywords
     print('searching')
-    hashmap.find_urls_with_keywords('older', 'people', '&&')
+    hashmap.find_urls_with_keywords(operand_one, operand_two, operator)
     return
 
 
@@ -41,4 +41,4 @@ def delete():
 
 
 hashmap = read_input_file('inputs/url.txt')
-search()
+search('older', 'people', '&&')
