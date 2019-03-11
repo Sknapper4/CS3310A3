@@ -1,8 +1,8 @@
-from firstHashMap import HashMap
+from hashmapIterations.firstHashMap import HashMap
 
 h = HashMap(5)
 
-h.create_hash_map()
+h.read_file()
 
 h.add_new_object(['Beans', 1.85])
 h.add_new_object(['fives', 1.85])

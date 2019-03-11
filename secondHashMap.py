@@ -3,18 +3,29 @@ import random
 
 class HashMap:
 
-    def __init__(self, num_elements, hash_map=None):
-        self.map_size = num_elements * 5
-        self.hash_map = hash_map
+    def __init__(self, num_elements, input_file=None):
+        self.map_size = num_elements * 2
+        self.hash_map = [[] for x in range(self.map_size)]
+        self.input_file = input_file
+        self.read_file()
 
     def __str__(self):
         print(self.map_size)
         return str(self.hash_map)
 
-    def create_hash_map(self):
-        self.hash_map = [[] for x in range(self.map_size)]
+    def read_file(self):
+        with open(self.input_file, errors='ignore') as f:
+            for row in f:
+                line = row.split(' ')
+                if line[0].startswith('http'):
+                    url = line[0]
+                else:
+                    keywords = line
+                    self.link_url_to_keyword(url, keywords)
+        print('Index Created\n')
 
     def link_url_to_keyword(self, url, keywords):
+        # print('linking')
         for key in keywords:
             self.add_new_object(key, url)
 
@@ -24,17 +35,18 @@ class HashMap:
         return
 
     def add_new_object(self, keyword, url):
+        # print('adding')
         if not self.hash_map:
-            self.create_hash_map()
+            self.read_file()
         index_place = self.hash_value(keyword)
-        if len(self.hash_map[index_place]) > 0:
-            for x in self.hash_map[index_place]:
+        if self.hash_map[index_place]:
+            for index, x in enumerate(self.hash_map[index_place]):
                 if x[0] == keyword:
-                    # print(x[0])
-                    self.hash_map[index_place][x.index - 1].append(url)
+                    # print('here')
+                    self.hash_map[index_place][index].append(url)
                     return
                 elif x is None:
-                    self.hash_map[index_place][x.index - 1] = [keyword, url]
+                    self.hash_map[index_place][index] = [keyword, url]
                     return
         self.hash_map[index_place].append([keyword, url])
 
@@ -45,9 +57,9 @@ class HashMap:
         value_to_be_hashed = value[0]
         index_place = self.hash_value(value_to_be_hashed)
         if len(self.hash_map[index_place]) > 1:
-            for x in self.hash_map[index_place]:
+            for index, x in enumerate(self.hash_map[index_place]):
                 if x[0] is value_to_be_hashed:
-                    self.hash_map[index_place][x.index - 1] = None
+                    self.hash_map[index_place][index - 1] = None
                     return
         else:
             self.hash_map[index_place] = []
