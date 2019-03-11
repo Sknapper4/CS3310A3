@@ -14,31 +14,11 @@ def read_input_file(input_file):
                 url = line[0]
             else:
                 keywords = line
-                have_both_items = True
-            if have_both_items:
-                link_url_to_keyword(url, keywords, first_hashmap)
+                first_hashmap.link_url_to_keyword(url, keywords)
     print('Index Created\n')
     return first_hashmap
 
 
-def link_url_to_keyword(url, keywords, hashmap):
-    for x in keywords:
-        linked_items = [x, url]
-        hashmap.add_new_object(linked_items)
-    # print(hashmap)
-
-
-def search(operand_one, operand_two, operator):
-    # TODO allow user to look for urls with keywords
-    print('searching')
-    hashmap.find_urls_with_keywords(operand_one, operand_two, operator)
-    return
-
-
-def delete():
-    # TODO allow user to delete urls with keywords
-    return
-
-
-hashmap = read_input_file('inputs/url.txt')
-search('older', 'people', '&&')
+if __name__ == '__main__':
+    hashmap = read_input_file('inputs/url.txt')
+    hashmap.search('older', 'people', '&&')
