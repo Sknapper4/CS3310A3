@@ -8,7 +8,14 @@ class HashMap:
         return
 
     def hash(self, value):
-        # TODO create a hash algorithm, return that value
+        # TODO figure out a map size, mod by that size
+        '''
+        Take in the value to be hashed, loop through the string,
+        multiply the ascii value of each character by itself
+        return the total modded by the size of the map
+        :param value: the value to be hashed
+        :return: hash_value modded by map size
+        '''
         hash_value = 0
         for char in list(value):
             hash_value += ord(char) * ord(char)

@@ -1,3 +1,10 @@
+'''
+In this first implementation of my hash table,
+I first create an empty hash table directly correlated to
+the size of the file. I then read the file in and connect
+each url to its set of keywords.
+To resolve collisions, I used separate chaining.
+'''
 
 
 class HashMap:

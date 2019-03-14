@@ -1,0 +1,12 @@
+First HashMap results
+
+OR Operator
+154 results
+Creation time:  1.1608848571777344  seconds
+Search time for "and" operator:  0.03070068359375  seconds.
+
+
+AND Operator
+874 results
+Creation time:  1.1788709163665771  seconds
+Search time for "or" operator:  0.03632307052612305  seconds.
