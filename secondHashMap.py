@@ -14,6 +14,11 @@ class HashMap:
         self.size = 0
         self.map = [None] * self.capacity
 
+    def __str__(self):
+        for url_list in self.map:
+            for url in url_list:
+                return ''
+
     def read_file(self):
         # TODO read input file for URLs
         '''
@@ -78,14 +83,17 @@ class HashMap:
 
     def add(self, keyword, url, hash_value):
         # TODO add new object to the hash table
-        if self.size == self.capacity - 1:
+        if self.size == self.capacity/2:
             self.increase_capacity()
-        # print(hash_value)
+
         if self.map[hash_value]:
             if self.map[hash_value][0] == keyword:
                 self.map[hash_value].append(url)
             else:
-                new_hash_value = self.rehash(keyword)
+                if hash_value + 7 < self.capacity:
+                    new_hash_value = hash_value + 7
+                else:
+                    new_hash_value = hash_value / 2 + 7
                 self.add(keyword, url, new_hash_value)
         else:
             url_list = [keyword, url]

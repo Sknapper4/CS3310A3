@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a6e15485-e21d-4631-a619-5c3fe7da9bc4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/stack.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WMUsearchEngine.py" beforeDir="false" afterPath="$PROJECT_DIR$/WMUsearchEngine.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/benchmarks/times.txt" beforeDir="false" afterPath="$PROJECT_DIR$/benchmarks/times.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/secondHashMap.py" beforeDir="false" afterPath="$PROJECT_DIR$/secondHashMap.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -16,7 +13,7 @@
   </component>
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/A3_stephen_knapper$firstHashMap.coverage" NAME="firstHashMap Coverage Results" MODIFIED="1552147131220" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/A3_stephen_knapper$WMUsearchEngine.coverage" NAME="WMUsearchEngine Coverage Results" MODIFIED="1552531789314" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/A3_stephen_knapper$WMUsearchEngine.coverage" NAME="WMUsearchEngine Coverage Results" MODIFIED="1552575102025" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/A3_stephen_knapper$testHash.coverage" NAME="testHash Coverage Results" MODIFIED="1552147482871" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="FavoritesManager">
@@ -24,11 +21,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/WMUsearchEngine.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="25" column="12" lean-forward="true" selection-start-line="25" selection-start-column="12" selection-end-line="25" selection-end-column="12" />
+            <state relative-caret-position="135">
+              <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
               <folding>
                 <element signature="e#0#32#0" expanded="true" />
               </folding>
@@ -36,11 +33,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/secondHashMap.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="696">
-              <caret line="51" column="13" lean-forward="true" selection-start-line="51" selection-start-column="13" selection-end-line="51" selection-end-column="13" />
+            <state relative-caret-position="142">
+              <caret line="87" lean-forward="true" selection-start-line="87" selection-end-line="87" />
             </state>
           </provider>
         </entry>
@@ -81,10 +78,9 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-1080" />
-    <option name="y" value="-372" />
-    <option name="width" value="1080" />
-    <option name="height" value="1897" />
+    <option name="y" value="23" />
+    <option name="width" value="1440" />
+    <option name="height" value="807" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -230,12 +226,12 @@
       <workItem from="1552177595391" duration="2843000" />
       <workItem from="1552314601188" duration="236000" />
       <workItem from="1552319784577" duration="2216000" />
-      <workItem from="1552409747185" duration="12461000" />
+      <workItem from="1552409747185" duration="13061000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="32201000" />
+    <option name="totallyTimeSpent" value="32801000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -247,16 +243,16 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1080" y="-372" width="1080" height="1897" extended-state="6" />
+    <frame x="0" y="23" width="1440" height="807" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21290945" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15808298" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" weight="0.3297568" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3251445" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.39842874" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39739883" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32947975" />
@@ -265,7 +261,7 @@
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5007153" side_tool="true" weight="0.37572256" />
       <window_info anchor="bottom" id="Version Control" order="11" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="12" sideWeight="0.49928468" visible="true" weight="0.20707071" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="12" sideWeight="0.49928468" visible="true" weight="0.4017341" />
       <window_info anchor="bottom" id="Python Console" order="13" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -306,17 +302,6 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/WMUsearchEngine.py</url>
-          <line>24</line>
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$USER_HOME$/.pyenv/versions/3.7.0/lib/python3.7/codecs.py">
@@ -375,20 +360,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/WMUsearchEngine.py">
+    <entry file="file://$PROJECT_DIR$/secondHashMap.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="25" column="12" lean-forward="true" selection-start-line="25" selection-start-column="12" selection-end-line="25" selection-end-column="12" />
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="142">
+          <caret line="87" lean-forward="true" selection-start-line="87" selection-end-line="87" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/secondHashMap.py">
+    <entry file="file://$PROJECT_DIR$/WMUsearchEngine.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="696">
-          <caret line="51" column="13" lean-forward="true" selection-start-line="51" selection-start-column="13" selection-end-line="51" selection-end-column="13" />
+        <state relative-caret-position="135">
+          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
