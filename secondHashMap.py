@@ -1,9 +1,8 @@
 # Use extends to add a list to the existing list
 
-
 class HashMap:
 
-    def __init__(self, input_file=None, capacity=1000):
+    def __init__(self, input_file=None, url_stack=None, capacity=1000):
         '''
             initialize the HashMap object
             :param input_file: information to add to hash table
@@ -13,11 +12,7 @@ class HashMap:
         self.capacity = capacity
         self.size = 0
         self.map = [None] * self.capacity
-
-    def __str__(self):
-        for url_list in self.map:
-            for url in url_list:
-                return ''
+        self.url_stack = url_stack
 
     def read_file(self):
         '''
@@ -75,11 +70,18 @@ class HashMap:
         :param keywords: list of keywords connected to url
         '''
         for key in keywords:
-            hash_value = self.hash(key)
-            self.add(key, url, hash_value)
+            hash_value = self.hash(key.lower())
+            self.add(key.lower(), url, hash_value)
 
     def add(self, keyword, url, hash_value):
-        if self.size == self.capacity / 2:
+        '''
+            First we check that the size of the map isn't too large
+        :param keyword: keyword related to url
+        :param url: url related to keyword
+        :param hash_value: index value
+        :return:
+        '''
+        if self.size == self.capacity / 1.5:
             self.increase_capacity()
             self.rehash_previous_list()
 
@@ -100,10 +102,14 @@ class HashMap:
 
     def search(self, operand_one=None, operand_two=None, operator=None):
         if operand_one and operand_two and operator:
+            self.url_stack.push(operand_one + ', ' + operand_two + ', ' + operator)
             if operator == '||':
-                self.or_operator(operand_one, operand_two)
+                self.or_operator(operand_one.lower(), operand_two.lower())
             elif operator == '&&':
-                self.and_operator(operand_one, operand_two)
+                self.and_operator(operand_one.lower(), operand_two.lower())
+            print(self.url_stack.size())
+        else:
+            print('You need both operands and an operator to perform search function.')
 
     def or_operator(self, op_one, op_two):
         '''
@@ -116,28 +122,42 @@ class HashMap:
         op_two_hashed = self.does_exist(op_two)
         if op_one_hashed:
             for index, url in enumerate(self.map[op_one_hashed][1:]):
-                h = url
-            print(index)
+                self.url_stack.push(url)
+            print(index + 1)
         else:
             print('Operand ', op_one, ' does not exist.')
 
         if op_two_hashed:
             for index, url in enumerate(self.map[op_two_hashed][1:]):
-                h = url
-            print(index)
+                self.url_stack.push(url)
+            print(index + 1)
         else:
             print('Operand ', op_two, ' does not exist.')
 
     def and_operator(self, op_one, op_two):
+        '''
+            First we assign our hash values,
+            if BOTH of those values exist,
+                we first search for all the urls related to the first operand and
+                add those to a temporary list
+                Then, we search for all the urls related to the second operand,
+                if those urls are in the temporary list we add that url to the url stack
+            otherwise we let the user know that at least one of the operands doesn't exist
+        :param op_one: first operand
+        :param op_two: second operand
+        :return:
+        '''
+        temp_list = []
         op_one_hashed = self.does_exist(op_one)
         op_two_hashed = self.does_exist(op_two)
         if op_one_hashed and op_two_hashed:
             for index, url in enumerate(self.map[op_one_hashed][1:]):
-                h = url
-            print(index)
+                temp_list.append(url)
+            print(index + 1)
             for index, url in enumerate(self.map[op_two_hashed][1:]):
-                h = url
-            print(index)
+                if url in temp_list:
+                    self.url_stack.push(url)
+            print(index + 1)
         else:
             print('Both operands must exist to search using the AND operator.')
 
@@ -167,4 +187,4 @@ class HashMap:
         '''
         new_list = [None] * self.capacity
         self.map.extend(new_list)
-        self.capacity = self.capacity * 2
+        self.capacity = len(self.map)
