@@ -1,4 +1,12 @@
-# Use extends to add a list to the existing list
+'''
+    I decided to use open addressing with linear probing
+    to handle collisions. I increment by 7 if a collision occurs.
+    I chose to use this hashmap iteration because, while creation time may be slower,
+    searches for this hashmap were not only more accurate but were much faster.
+    Seeing as this is a 'search engine' I believe it is in the best interest of
+    the users to use this type of hashmap.
+'''
+
 
 class HashMap:
 
@@ -6,7 +14,7 @@ class HashMap:
         '''
             initialize the HashMap object
             :param input_file: information to add to hash table
-            :param size: size of hash table, default is 1,000
+            :param capacity: size of hash table, default is 1,000
         '''
         self.input_file = input_file
         self.capacity = capacity
@@ -54,8 +62,16 @@ class HashMap:
             return hash_value * 7717 % self.capacity
 
     def rehash_previous_list(self):
-
-        for url_list in self.map:
+        '''
+            Put the previous map into a temporary map,
+            erase and increase the size of the map
+            read through the temp map and move the keywords to the
+            new map.
+        :return:
+        '''
+        temp_map = self.map
+        self.map = self.increase_capacity()
+        for url_list in temp_map:
             if url_list:
                 keyword = url_list[0]
                 for url in url_list[1:]:
@@ -81,12 +97,11 @@ class HashMap:
         :param hash_value: index value
         :return:
         '''
-        if self.size == self.capacity / 1.5:
-            self.increase_capacity()
+        if self.size >= self.capacity * (3 / 4):
             self.rehash_previous_list()
 
         if self.map[hash_value]:
-            if self.map[hash_value][0] == keyword:
+            if self.map[hash_value][0] == keyword.lower():
                 self.map[hash_value].append(url)
             else:
                 if hash_value + 7 < self.capacity:
@@ -98,16 +113,27 @@ class HashMap:
             url_list = [keyword, url]
             self.map[hash_value] = url_list
             self.size += 1
-        return
 
     def search(self, operand_one=None, operand_two=None, operator=None):
+        '''
+            First, we check if all the operands and operators are there
+            if they are,
+                we add that string to the url_stack
+                based on the operator, we send the search words to the
+                corresponding function
+            if they aren't
+                we let the user know
+        :param operand_one: first operand
+        :param operand_two: second operand
+        :param operator: AND/OR operator
+        :return:
+        '''
         if operand_one and operand_two and operator:
             self.url_stack.push(operand_one + ', ' + operand_two + ', ' + operator)
             if operator == '||':
                 self.or_operator(operand_one.lower(), operand_two.lower())
             elif operator == '&&':
                 self.and_operator(operand_one.lower(), operand_two.lower())
-            print(self.url_stack.size())
         else:
             print('You need both operands and an operator to perform search function.')
 
@@ -121,16 +147,14 @@ class HashMap:
         op_one_hashed = self.does_exist(op_one)
         op_two_hashed = self.does_exist(op_two)
         if op_one_hashed:
-            for index, url in enumerate(self.map[op_one_hashed][1:]):
+            for url in self.map[op_one_hashed][1:]:
                 self.url_stack.push(url)
-            print(index + 1)
         else:
             print('Operand ', op_one, ' does not exist.')
 
         if op_two_hashed:
-            for index, url in enumerate(self.map[op_two_hashed][1:]):
+            for url in self.map[op_two_hashed][1:]:
                 self.url_stack.push(url)
-            print(index + 1)
         else:
             print('Operand ', op_two, ' does not exist.')
 
@@ -151,13 +175,11 @@ class HashMap:
         op_one_hashed = self.does_exist(op_one)
         op_two_hashed = self.does_exist(op_two)
         if op_one_hashed and op_two_hashed:
-            for index, url in enumerate(self.map[op_one_hashed][1:]):
+            for url in self.map[op_one_hashed][1:]:
                 temp_list.append(url)
-            print(index + 1)
-            for index, url in enumerate(self.map[op_two_hashed][1:]):
+            for url in self.map[op_two_hashed][1:]:
                 if url in temp_list:
                     self.url_stack.push(url)
-            print(index + 1)
         else:
             print('Both operands must exist to search using the AND operator.')
 
@@ -171,20 +193,23 @@ class HashMap:
                 the index value if the operand is found
         '''
         operator_hashed = self.hash(operand)
-        while self.map[operator_hashed][0] and self.map[operator_hashed][0] != operand:
+        while self.map[operator_hashed] and self.map[operator_hashed][0] != operand:
             if operator_hashed + 7 < self.capacity:
                 operator_hashed = operator_hashed + 7
             else:
                 operator_hashed = (operator_hashed + 7) % self.capacity
-            if not self.map[operator_hashed]:
-                return None
-        return operator_hashed
+        if self.map[operator_hashed]:
+            return operator_hashed
+        else:
+            return None
 
     def increase_capacity(self):
         '''
             Doubles the size of the hash map
-        :return:
+            Sets size back to 0
+        :return: new list
         '''
+        self.capacity = self.capacity * 2
+        self.size = 0
         new_list = [None] * self.capacity
-        self.map.extend(new_list)
-        self.capacity = len(self.map)
+        return new_list

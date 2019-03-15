@@ -1,4 +1,4 @@
-from secondHashMap import HashMap
+from bestHashMap import HashMap
 from stack import Stack
 from headers import INPUT_FILE, INSTRUCTION_FILE
 
@@ -6,8 +6,11 @@ import time
 
 
 def wmu_search_engine():
-    hashmap = HashMap(INPUT_FILE)
-    return hashmap
+    hashmap.read_file()
+    hashmap.search('older', 'nothingthsda', '||')
+    print(url_stack.size())
+    while instruction_stack.size() > 0:
+        print(instruction_stack.pop())
 
 
 def read_instructions():
@@ -19,7 +22,7 @@ def read_instructions():
     :return: the instructions
     '''
     word_stack = Stack()
-    instruction_stack = Stack()
+    instructions = Stack()
     with open(INSTRUCTION_FILE) as f:
         for row in f:
             if row.strip() == '&&' or row.strip() == '||':
@@ -27,27 +30,17 @@ def read_instructions():
                     instruction_string = str(word_stack.pop())
                     instruction_string += ' ' + str(word_stack.pop())
                     instruction_string += ' ' + str(row.strip())
-                    instruction_stack.push(instruction_string)
+                    instructions.push(instruction_string)
             elif row.strip() == '?' or row.strip() == '!':
-                instruction_stack.push(row.strip())
+                instructions.push(row.strip())
             else:
                 word_stack.push(row.strip())
-    return instruction_stack
+    return instructions
 
 
 if __name__ == '__main__':
     url_stack = Stack()
-    s = read_instructions()
+    instruction_stack = read_instructions()
 
-    create_start_time = time.time()
-
-    h = HashMap(INPUT_FILE, url_stack)
-    h.read_file()
-
-    creation_total_time = time.time() - create_start_time
-
-    start = time.time()
-    h.search('information', 'Older', '||')
-    print('search time ', (time.time() - start))
-
-    print('Creation time: ', creation_total_time, ' seconds')
+    hashmap = HashMap(INPUT_FILE, url_stack)
+    wmu_search_engine()

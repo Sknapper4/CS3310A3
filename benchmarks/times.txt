@@ -1,17 +1,28 @@
 First HashMap results
 
 OR Operator
-154 results
+874 results
 Creation time:  1.1608848571777344  seconds
-Search time for "and" operator:  0.03070068359375  seconds.
+Search time for "and" operator:  0.13070068359375  seconds.
 
 
 AND Operator
-874 results
+154 results
 Creation time:  1.1788709163665771  seconds
-Search time for "or" operator:  0.03632307052612305  seconds.
+Search time for "or" operator:  0.13632307052612305  seconds.
 
 
 ===============================================================
 
+Second HashMap results
 
+OR Operator
+2681 results
+Creation time:  2.442589044570923  seconds
+search time  0.0008959770202636719  seconds
+
+
+AND Operator
+166 results
+Creation time:  2.4573869705200195  seconds
+search time  0.02296304702758789  seconds
