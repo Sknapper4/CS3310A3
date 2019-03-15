@@ -56,17 +56,6 @@ class HashMap:
     def hash_value(self, value):
         return len(value) * 6 % self.map_size
 
-    def delete_object(self, value):
-        value_to_be_hashed = value[0]
-        index_place = self.hash_value(value_to_be_hashed)
-        if len(self.hash_map[index_place]) > 1:
-            for index, x in enumerate(self.hash_map[index_place]):
-                if x[0] is value_to_be_hashed:
-                    self.hash_map[index_place][index - 1] = None
-                    return
-        else:
-            self.hash_map[index_place] = []
-
     def search(self, operand_one=None, operand_two=None, operator=None):
         if operand_one and operand_two and operator:
             if operator == '||':

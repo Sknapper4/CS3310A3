@@ -65,7 +65,6 @@ def write_results_to_file():
     while not search_time_stack.is_empty():
         results_file.write(search_time_stack.pop() + '\n')
     results_file.close()
-    return
 
 
 if __name__ == '__main__':

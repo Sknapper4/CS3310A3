@@ -1,0 +1,7 @@
+
+
+function WMUsearchEngine
+    read from the instruction stack
+    search the hashmap for instructions
+
+function read_instructions
