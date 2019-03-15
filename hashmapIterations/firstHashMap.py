@@ -1,3 +1,5 @@
+# Stephen Knapper
+# stephen.a.knapper@wmich.edu
 '''
 In this first implementation of my hash table,
 I first create an empty hash table directly correlated to

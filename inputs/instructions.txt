@@ -1,4 +1,4 @@
-!
+?
 older
 people
 &&
@@ -7,10 +7,10 @@ people
 ||
 ?
 &&
-?
+!
 yellow
 instructions
 ||
-!
-purple
-green
+housing
+information
+&&

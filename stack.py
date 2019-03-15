@@ -1,3 +1,5 @@
+# Stephen Knapper
+# stephen.a.knapper@wmich.edu
 
 
 class Stack:

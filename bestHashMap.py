@@ -1,3 +1,5 @@
+# Stephen Knapper
+# stephen.a.knapper@wmich.edu
 '''
     I decided to use open addressing with linear probing
     to handle collisions. I increment by 7 if a collision occurs.
@@ -118,7 +120,7 @@ class HashMap:
         '''
             First, we check if all the operands and operators are there
             if they are,
-                we add that string to the url_stack
+                we add that string to the url_stack.txt
                 based on the operator, we send the search words to the
                 corresponding function
             if they aren't
@@ -150,13 +152,13 @@ class HashMap:
             for url in self.map[op_one_hashed][1:]:
                 self.url_stack.push(url)
         else:
-            print('Operand ', op_one, ' does not exist.')
+            print('Operand "', op_one, '" does not exist.')
 
         if op_two_hashed:
             for url in self.map[op_two_hashed][1:]:
                 self.url_stack.push(url)
         else:
-            print('Operand ', op_two, ' does not exist.')
+            print('Operand "', op_two, '" does not exist.')
 
     def and_operator(self, op_one, op_two):
         '''
