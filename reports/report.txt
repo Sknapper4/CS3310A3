@@ -1,7 +1,138 @@
 
-
+WMUsearchEngine.py
 function WMUsearchEngine
     read from the instruction stack
     search the hashmap for instructions
 
 function read_instructions
+    open the instruction file
+    read each row
+    if a row has an operator (&& or ||) in it
+        add the previous two words  and the symbols to the instruction stack
+    if a row has an instruction (! or ?) add it to the instruction stack
+    return the instruction stack
+
+function write_urls_to_file
+    open output file
+    while the stop instruction(!) isn't next on the stack
+        write the instructions and their corresponding URLs to the file
+    when the file stops, print the final instruction (!)
+    close the file
+
+function write_results_to_file
+    open output file
+    while the search_time_stack has values in it
+        write the time results from the stack to the output file
+    close the output file
+
+function main
+    create url_stack
+    create search_time_stack
+    create instruction_stack
+    Create an instance of the hashmap, pass in the file to read and the url_stack
+    read the hashmaps file and assign urls
+    call WMUsearchEngine
+    call write_urls_to_file
+    call write_results_to_file
+
+
+
+bestHashMap.py
+
+function __init__
+    params: input_file, url_stack, capacity/size of the map
+    set input_file to file passed
+    set capacity to capacity passed
+    set size to 0
+    initiate the map array
+    set the url_stack to the url_stack passed
+
+function read_file
+    open the file
+    loop through each line
+    if the line is a URL
+        assign it to a url variable
+    if the line is keywords
+        split the keywords into a list
+        call link_urls_to_keywords and pass in the url and the keyword list
+    print index created
+
+function hash
+    params: value to be hashed
+    declare hash variable
+    if the value is a string
+        loop through all the characters and square its ASCII value
+        return that value modded by map size
+    if the value is a number
+        square the number, multiply it by a large prime number
+        return that value modded by map size
+
+function rehash_previous_list
+    put the map into a temporary map
+    reset the map and increase the size
+    loop through the temporary map and rehash and add the
+        keywords and their related urls into the new map
+
+function link_url_to_keywords
+    params: url, keywords
+    loop through the list of keywords
+        call the add function and pass in the url, the keyword, and the hashvalue
+
+function add
+    params: keyword, url, hash_value
+    if size > 3 * current_map_capacity / 4
+        call rehash_previous_list
+    if map[hash_value]
+        if map[hash_value][key] == keyword
+            append(url)
+        if hash_value + 7 < map_capacity
+            hash_value = hash_value + 7
+        else
+            hash_value = (hash_value + 7) mod map_capacity
+        call add function, pass in new hash_value
+    else
+        map[hash_value] = keyword + url
+        size += 1
+
+function search
+    params: operand1, operand2, operator
+        if operand1 and operand2, and operator
+            if operator == or
+                call or_operator
+                    send in both operands
+            if operator == and
+                call and_operator
+                    send in both operands
+        else
+            print 'Need all elements to perform search'
+
+function or_operator
+    params: operand1, operand2
+    check if these operands exist in the map
+    if operand1
+        for url in list
+            url_stack.push(url)
+    else
+        print 'operand1 doesn't exist'
+
+    if operand2
+        for url in list
+            url_stack.push(url)
+    else
+        print 'operand2 doesn't exits'
+
+function and_operator
+    params: operand1, operand2
+    check if operands exist in the map
+    temp_list = []
+    if operand1 AND operand2
+        for url in list1
+            temp_list.append(url)
+        for url in list2
+            if url in temp_list
+            url_stack.push(url)
+
+function increase_capacity
+    capacity = capacity * 2
+    size = 0
+    return [none] * capacity

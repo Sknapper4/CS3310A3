@@ -80,9 +80,5 @@ if __name__ == '__main__':
     hashmap_creation_end = time.time() - hashmap_creation_start
 
     wmu_search_engine()
-
-    url_stack.size()
-
     write_urls_to_file(url_stack)
-
     write_results_to_file()

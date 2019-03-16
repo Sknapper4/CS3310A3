@@ -2,15 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a6e15485-e21d-4631-a619-5c3fe7da9bc4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/reports/Plagiarism_declaration_stephen_knapper.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reports/readme.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reports/report.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/skhome.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/skhome.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WMUsearchEngine.py" beforeDir="false" afterPath="$PROJECT_DIR$/WMUsearchEngine.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hashmapIterations/firstHashMap.py" beforeDir="false" afterPath="$PROJECT_DIR$/hashmapIterations/firstHashMap.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/results.txt" beforeDir="false" afterPath="$PROJECT_DIR$/output/results.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/readme.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/report.txt" beforeDir="false" afterPath="$PROJECT_DIR$/reports/report.txt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -30,11 +23,11 @@
     <splitter split-orientation="horizontal" split-proportion="0.5">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/WMUsearchEngine.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="583">
-                  <caret line="45" column="41" selection-start-line="45" selection-start-column="41" selection-end-line="45" selection-end-column="41" />
+                <state relative-caret-position="988">
+                  <caret line="82" column="33" selection-start-line="82" selection-start-column="33" selection-end-line="82" selection-end-column="33" />
                   <folding>
                     <element signature="e#48#79#0" expanded="true" />
                   </folding>
@@ -42,10 +35,10 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="false">
+          <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/bestHashMap.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="2340">
+                <state relative-caret-position="75">
                   <caret line="156" column="25" lean-forward="true" selection-start-line="156" selection-start-column="25" selection-end-line="156" selection-end-column="25" />
                 </state>
               </provider>
@@ -58,8 +51,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/reports/report.txt">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="105">
-                  <caret line="7" selection-start-line="7" selection-end-line="7" />
+                <state relative-caret-position="515">
+                  <caret line="98" column="22" lean-forward="true" selection-start-line="98" selection-start-column="22" selection-end-line="98" selection-end-column="22" />
                 </state>
               </provider>
             </entry>
@@ -103,8 +96,9 @@
         <option value="$PROJECT_DIR$/stack.py" />
         <option value="$PROJECT_DIR$/readme.md" />
         <option value="$PROJECT_DIR$/hashmapIterations/firstHashMap.py" />
-        <option value="$PROJECT_DIR$/WMUsearchEngine.py" />
         <option value="$PROJECT_DIR$/report.txt" />
+        <option value="$PROJECT_DIR$/WMUsearchEngine.py" />
+        <option value="$PROJECT_DIR$/reports/report.txt" />
       </list>
     </option>
   </component>
@@ -143,8 +137,8 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/reports" />
       <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/reports" />
       <recent name="$PROJECT_DIR$/hashmapIterations" />
       <recent name="$PROJECT_DIR$/inputs" />
     </key>
@@ -254,12 +248,12 @@
       <workItem from="1552177595391" duration="2843000" />
       <workItem from="1552314601188" duration="236000" />
       <workItem from="1552319784577" duration="2216000" />
-      <workItem from="1552409747185" duration="31219000" />
+      <workItem from="1552409747185" duration="33011000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="50959000" />
+    <option name="totallyTimeSpent" value="52751000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -272,8 +266,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-1080" y="-372" width="1080" height="1897" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22928709" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.22928709" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" weight="0.3297568" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -408,7 +403,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/reports/readme.md">
+    <entry file="file://$PROJECT_DIR$/readme.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="120">
@@ -418,27 +413,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bestHashMap.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2340">
-          <caret line="156" column="25" lean-forward="true" selection-start-line="156" selection-start-column="25" selection-end-line="156" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/WMUsearchEngine.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="583">
-          <caret line="45" column="41" selection-start-line="45" selection-start-column="41" selection-end-line="45" selection-end-column="41" />
+        <state relative-caret-position="988">
+          <caret line="82" column="33" selection-start-line="82" selection-start-column="33" selection-end-line="82" selection-end-column="33" />
           <folding>
             <element signature="e#48#79#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/bestHashMap.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="156" column="25" lean-forward="true" selection-start-line="156" selection-start-column="25" selection-end-line="156" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/reports/report.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" selection-start-line="7" selection-end-line="7" />
+        <state relative-caret-position="515">
+          <caret line="98" column="22" lean-forward="true" selection-start-line="98" selection-start-column="22" selection-end-line="98" selection-end-column="22" />
         </state>
       </provider>
     </entry>

@@ -1,4 +1,4 @@
-Searching for "people, older, &&" took 0.022372 seconds.
-Searching for "people, older, ||" took 0.000916 seconds.
-Searching for "instructions, yellow, ||" took 0.000065 seconds.
-Searching for "information, housing, &&" took 0.058147 seconds.
+Searching for "people, older, &&" took 0.021444 seconds.
+Searching for "people, older, ||" took 0.000795 seconds.
+Searching for "instructions, yellow, ||" took 0.000070 seconds.
+Searching for "information, housing, &&" took 0.055305 seconds.
